@@ -1,0 +1,111 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+.home {
+  background: linear-gradient(105deg, $color-main, $color-main 50%, $color-white 50%, $color-white 100%);
+}
+
+main {
+  display: flex;
+  height: 100vh;
+  max-width: 1000px;
+  margin: 0 auto;
+
+  .theme {
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $color-white;
+
+    .content {
+      position: relative;
+      height: 92%;
+
+      .theme-photo {
+        height: 100%;
+      }
+  
+      .title {
+        position: absolute;
+        top: 30px;
+        left: 55px;
+        font-size: 26px;
+        font-weight: 500;
+        font-style: italic;
+        letter-spacing: 1px;
+      }
+  
+      .subtitle {
+        position: absolute;
+        bottom: 30px;
+        left: 30px;
+        font-size: 56px;
+        font-weight: 700;
+        letter-spacing: 5px;
+      }
+    }
+  }
+
+  .rooms {
+    width: 40%;
+    height: 100%;
+    padding: 10px 0;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: scroll;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    .room {
+      position: relative;
+      width: 70%;
+      margin: 10px 0;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .info {
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: rgba($color-primary--light, .8);
+        width: 100%;
+        height: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: $color-white;
+        opacity: 0;
+        transition: opacity .5s, height .3s;
+
+        .name {
+          font-weight: 500;
+          letter-spacing: 2px;
+          margin-bottom: 6px;
+        }
+
+        .price {
+          font-size: 14px;
+        }
+      }
+    }
+
+    .room:hover .info {
+      height: 100%;
+      opacity: 1;
+    }
+  }
+}
