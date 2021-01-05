@@ -82,74 +82,106 @@ main {
       height: 100%;
       opacity: 1; }
 
-.room-intro {
+header {
+  padding: 12px 20px;
+  background-color: #7B9FAA; }
+  header .logo {
+    margin-left: 12px;
+    font-size: 20px;
+    font-weight: 700;
+    font-style: italic;
+    text-decoration: none;
+    color: #fff; }
+
+.room-page {
   display: flex;
   justify-content: center;
   width: 100%;
   padding: 20px 0; }
-  .room-intro .col-left {
+  .room-page .col-left {
     width: 55%;
     max-width: 600px;
     padding-right: 20px;
     box-sizing: border-box; }
-    .room-intro .col-left .room-display {
+    .room-page .col-left .room-display {
       position: relative;
       width: 100%;
       padding-top: 67%; }
-      .room-intro .col-left .room-display .display-img {
+      .room-page .col-left .room-display img {
         width: 100%;
         height: 100%;
         position: absolute;
         top: 0; }
-        .room-intro .col-left .room-display .display-img img {
-          width: 100%;
-          height: 100%; }
-    .room-intro .col-left .room-images {
+    .room-page .col-left .room-images {
       padding: 12px 0; }
-      .room-intro .col-left .room-images img {
+      .room-page .col-left .room-images img {
         width: 150px;
-        height: 100px; }
-        .room-intro .col-left .room-images img:not(:last-child) {
+        height: 100px;
+        cursor: pointer; }
+        .room-page .col-left .room-images img:not(:last-child) {
           margin-right: 12px; }
-    .room-intro .col-left .detail {
+    .room-page .col-left .detail {
       font-size: 13px;
       color: #4a4a4a;
       background-color: #f3f3f3;
       padding: 20px;
       box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2);
       border-radius: 2px; }
-      .room-intro .col-left .detail p {
-        margin: 0; }
-  .room-intro .col-right {
+      .room-page .col-left .detail .title {
+        font-size: 20px;
+        font-weight: 500;
+        margin-bottom: 16px; }
+      .room-page .col-left .detail p {
+        margin: 0;
+        line-height: 20px; }
+        .room-page .col-left .detail p i {
+          width: 20px;
+          margin-right: 4px; }
+      .room-page .col-left .detail .facility {
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 16px;
+        padding-top: 12px;
+        border-top: 1px dashed #4a4a4a; }
+        .room-page .col-left .detail .facility .item {
+          width: 33%;
+          line-height: 20px; }
+          .room-page .col-left .detail .facility .item i {
+            width: 20px;
+            margin-right: 4px; }
+        .room-page .col-left .detail .facility .item--invalid {
+          color: #C2C2C2; }
+  .room-page .col-right {
     width: 40%;
     max-width: 450px;
-    padding: 30px 0 0 20px;
+    padding: 12px 0 0 20px;
     box-sizing: border-box;
     color: #4a4a4a; }
-    .room-intro .col-right .room-name {
+    .room-page .col-right .room-name {
       font-size: 32px;
       font-weight: 700;
       letter-spacing: 3px; }
-    .room-intro .col-right .divider {
+    .room-page .col-right .divider {
       width: 180px;
       height: 3px;
       background-color: #4a4a4a;
-      margin-top: 12px; }
-    .room-intro .col-right .room-intro {
+      margin: 12px 0 16px 0; }
+    .room-page .col-right .room-intro {
+      margin-bottom: 12px;
       font-size: 14px; }
-    .room-intro .col-right .room-price {
+    .room-page .col-right .room-price {
       margin-bottom: 12px; }
-      .room-intro .col-right .room-price p {
+      .room-page .col-right .room-price p {
         margin: 0; }
-    .room-intro .col-right .room-time {
-      margin-bottom: 20px; }
-      .room-intro .col-right .room-time p {
+    .room-page .col-right .room-time {
+      margin-bottom: 30px; }
+      .room-page .col-right .room-time p {
         margin: 0; }
-    .room-intro .col-right .reserve {
+    .room-page .col-right .reserve {
       display: flex;
       justify-content: flex-end;
       margin-bottom: 50px; }
-      .room-intro .col-right .reserve button {
+      .room-page .col-right .reserve button {
         width: 150px;
         height: 40px;
         display: flex;
@@ -160,13 +192,130 @@ main {
         font-weight: 700;
         outline: none;
         border: 0;
-        letter-spacing: 1px; }
-    .room-intro .col-right .recommendation {
+        letter-spacing: 1px;
+        cursor: pointer; }
+    .room-page .col-right .recommendation {
       font-size: 20px;
       font-weight: 500;
       color: #4a4a4a;
       letter-spacing: 1px; }
-    .room-intro .col-right .recommendation-list .item {
-      margin-top: 16px;
-      padding: 20px;
-      box-shadow: 0 0 7px 0 rgba(0, 0, 0, 0.2); }
+    .room-page .col-right .recommendation-list {
+      display: flex;
+      flex-direction: column; }
+      .room-page .col-right .recommendation-list .item {
+        display: flex;
+        margin-top: 16px;
+        padding: 16px;
+        box-shadow: 0 0 7px 0 rgba(0, 0, 0, 0.2);
+        text-decoration: none;
+        color: #4a4a4a; }
+        .room-page .col-right .recommendation-list .item .item-img {
+          position: relative;
+          width: 50%;
+          padding-top: 34%; }
+          .room-page .col-right .recommendation-list .item .item-img img {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0; }
+        .room-page .col-right .recommendation-list .item .item-info {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          width: 50%;
+          margin-left: 12px; }
+          .room-page .col-right .recommendation-list .item .item-info .name {
+            font-weight: 700; }
+          .room-page .col-right .recommendation-list .item .item-info .price {
+            font-size: 14px;
+            text-align: right; }
+            .room-page .col-right .recommendation-list .item .item-info .price .text--hili {
+              font-size: 16px;
+              color: #CF1F1F;
+              font-weight: 500;
+              font-style: italic;
+              margin-right: 4px; }
+
+.dialog-reserve {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5); }
+  .dialog-reserve .content {
+    position: relative;
+    padding: 20px 28px;
+    background-color: #fff;
+    color: #4a4a4a; }
+    .dialog-reserve .content .btn-close {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      width: 24px;
+      height: 24px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: background-color 0.1s ease; }
+      .dialog-reserve .content .btn-close:hover {
+        background-color: rgba(74, 74, 74, 0.2); }
+    .dialog-reserve .content .bill {
+      font-size: 13px;
+      text-align: right;
+      margin-bottom: 16px; }
+    .dialog-reserve .content .title {
+      font-size: 20px;
+      font-weight: 500;
+      margin: 8px 0 16px 0; }
+    .dialog-reserve .content .item-title {
+      font-size: 13px;
+      font-weight: 300; }
+    .dialog-reserve .content .item-input-date {
+      display: flex;
+      justify-content: space-between;
+      width: 300px;
+      height: 30px;
+      margin: 4px 0; }
+      .dialog-reserve .content .item-input-date .date {
+        position: relative;
+        width: 45%; }
+      .dialog-reserve .content .item-input-date input {
+        box-sizing: border-box;
+        width: 100%;
+        height: 100%;
+        outline: none; }
+      .dialog-reserve .content .item-input-date i {
+        position: absolute;
+        top: 5px;
+        right: 5px; }
+    .dialog-reserve .content .item-input {
+      width: 300px;
+      height: 30px;
+      margin: 4px 0 12px; }
+      .dialog-reserve .content .item-input input {
+        box-sizing: border-box;
+        width: 100%;
+        height: 100%;
+        outline: none; }
+    .dialog-reserve .content .send-reservation {
+      display: flex;
+      justify-content: center;
+      margin-top: 30px; }
+      .dialog-reserve .content .send-reservation button {
+        width: 100px;
+        height: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #7B9FAA;
+        color: #fff;
+        outline: none;
+        border: 0;
+        letter-spacing: 1px;
+        cursor: pointer; }

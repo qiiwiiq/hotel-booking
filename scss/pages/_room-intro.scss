@@ -1,4 +1,18 @@
-.room-intro {
+header {
+  padding: 12px 20px;
+  background-color: $color-primary;
+
+  .logo {
+    margin-left: 12px;
+    font-size: 20px;
+    font-weight: 700;
+    font-style: italic;
+    text-decoration: none;
+    color: $color-white;
+  }
+}
+
+.room-page {
   display: flex;
   justify-content: center;
   width: 100%;
@@ -15,16 +29,11 @@
       width: 100%;
       padding-top: 67%;
 
-      .display-img {
+      img {
         width: 100%;
         height: 100%;
         position: absolute;
         top: 0;
-
-        img {
-          width: 100%;
-          height: 100%;
-        }
       }
     }
 
@@ -34,6 +43,7 @@
       img {
         width: 150px;
         height: 100px;
+        cursor: pointer;
 
         &:not(:last-child) {
           margin-right: 12px;
@@ -49,8 +59,42 @@
       box-shadow: 0 0 5px 0 rgba($color-black,.2);
       border-radius: 2px;
 
+      .title {
+        font-size: 20px;
+        font-weight: 500;
+        margin-bottom: 16px;
+      }
+
       p {
         margin: 0;
+        line-height: 20px;
+
+        i {
+          width: 20px;
+          margin-right: 4px;
+        }
+      }
+
+      .facility {
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 16px;
+        padding-top: 12px;
+        border-top: 1px dashed $color-grey;
+
+        .item {
+          width: 33%;
+          line-height: 20px;
+
+          i {
+            width: 20px;
+            margin-right: 4px;
+          }
+        }
+
+        .item--invalid {
+          color: $color-grey--medium;
+        }
       }
     }
   }
@@ -58,7 +102,7 @@
   .col-right {
     width: 40%;
     max-width: 450px;
-    padding: 30px 0 0 20px;
+    padding: 12px 0 0 20px;
     box-sizing: border-box;
     color: $color-grey;
 
@@ -72,10 +116,11 @@
       width: 180px;
       height: 3px;
       background-color: $color-grey;
-      margin-top: 12px;
+      margin: 12px 0 16px 0;
     }
 
     .room-intro {
+      margin-bottom: 12px;
       font-size: 14px;
     }
 
@@ -88,7 +133,7 @@
     }
 
     .room-time {
-      margin-bottom: 20px;
+      margin-bottom: 30px;
 
       p {
         margin: 0;
@@ -112,6 +157,7 @@
         outline: none;
         border: 0;
         letter-spacing: 1px;
+        cursor: pointer;
       }
     }
 
@@ -123,10 +169,167 @@
     }
 
     .recommendation-list {
+      display: flex;
+      flex-direction: column;
+
       .item {
+        display: flex;
         margin-top: 16px;
-        padding: 20px;
+        padding: 16px;
         box-shadow: 0 0 7px 0 rgba($color-black,.2);
+        text-decoration: none;
+        color: $color-grey;
+
+        .item-img {
+          position: relative;
+          width: 50%;
+          padding-top: 34%;
+
+          img {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+          }
+        }
+
+        .item-info {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          width: 50%;
+          margin-left: 12px;
+
+          .name {
+            font-weight: 700;
+          }
+
+          .price {
+            font-size: 14px;
+            text-align: right;
+
+            .text--hili {
+              font-size: 16px;
+              color: $color-red;
+              font-weight: 500;
+              font-style: italic;
+              margin-right: 4px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.dialog-reserve {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba($color-black, .5);
+
+  .content {
+    position: relative;
+    padding: 20px 28px;
+    background-color: $color-white;
+    color: $color-grey;
+
+    .btn-close {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      width: 24px;
+      height: 24px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: background-color 0.1s ease;
+
+      &:hover {
+        background-color: rgba($color-grey,.2);
+      }
+    }
+
+    .bill {
+      font-size: 13px;
+      text-align: right;
+      margin-bottom: 16px;
+    }
+
+    .title {
+      font-size: 20px;
+      font-weight: 500;
+      margin: 8px 0 16px 0;
+    }
+
+    .item-title {
+      font-size: 13px;
+      font-weight: 300;
+    }
+
+    .item-input-date {
+      display: flex;
+      justify-content: space-between;
+      width: 300px;
+      height: 30px;
+      margin: 4px 0;
+
+      .date {
+        position: relative;
+        width: 45%;
+      }
+
+      input {
+        box-sizing: border-box;
+        width: 100%;
+        height: 100%;
+        outline: none;
+      }
+
+      i {
+        position: absolute;
+        top: 5px;
+        right: 5px;
+      }
+    }
+
+    .item-input {
+      width: 300px;
+      height: 30px;
+      margin: 4px 0 12px;
+
+      input {
+        box-sizing: border-box;
+        width: 100%;
+        height: 100%;
+        outline: none;
+      }
+    }
+
+    .send-reservation {
+      display: flex;
+      justify-content: center;
+      margin-top: 30px;
+
+      button {
+        width: 100px;
+        height: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: $color-primary;
+        color: $color-white;
+        outline: none;
+        border: 0;
+        letter-spacing: 1px;
+        cursor: pointer;
       }
     }
   }
