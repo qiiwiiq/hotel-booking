@@ -4,83 +4,82 @@ html, body {
 
 .home {
   background: linear-gradient(105deg, #3a634a, #3a634a 50%, #fff 50%, #fff 100%); }
-
-main {
-  display: flex;
-  height: 100vh;
-  max-width: 1000px;
-  margin: 0 auto; }
-  main .theme {
-    width: 60%;
+  .home main {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #fff; }
-    main .theme .content {
-      position: relative;
-      height: 92%; }
-      main .theme .content .theme-photo {
-        height: 100%; }
-      main .theme .content .title {
-        position: absolute;
-        top: 30px;
-        left: 55px;
-        font-size: 26px;
-        font-weight: 500;
-        font-style: italic;
-        letter-spacing: 1px; }
-      main .theme .content .subtitle {
-        position: absolute;
-        bottom: 30px;
-        left: 30px;
-        font-size: 56px;
-        font-weight: 700;
-        letter-spacing: 5px; }
-  main .rooms {
-    width: 40%;
-    height: 100%;
-    padding: 10px 0;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    overflow: scroll;
-    -ms-overflow-style: none;
-    /* IE and Edge */
-    scrollbar-width: none; }
-    main .rooms::-webkit-scrollbar {
-      display: none; }
-    main .rooms .room {
-      position: relative;
-      width: 70%;
-      margin: 10px 0; }
-      main .rooms .room img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover; }
-      main .rooms .room .info {
-        position: absolute;
-        top: 0;
-        left: 0;
-        background-color: rgba(167, 187, 195, 0.8);
-        width: 100%;
-        height: 0;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        color: #fff;
-        opacity: 0;
-        transition: opacity .5s, height .3s; }
-        main .rooms .room .info .name {
+    height: 100vh;
+    max-width: 1000px;
+    margin: 0 auto; }
+    .home main .theme {
+      width: 60%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #fff; }
+      .home main .theme .content {
+        position: relative;
+        height: 92%; }
+        .home main .theme .content .theme-photo {
+          height: 100%; }
+        .home main .theme .content .title {
+          position: absolute;
+          top: 30px;
+          left: 55px;
+          font-size: 26px;
           font-weight: 500;
-          letter-spacing: 2px;
-          margin-bottom: 6px; }
-        main .rooms .room .info .price {
-          font-size: 14px; }
-    main .rooms .room:hover .info {
+          font-style: italic;
+          letter-spacing: 1px; }
+        .home main .theme .content .subtitle {
+          position: absolute;
+          bottom: 30px;
+          left: 30px;
+          font-size: 56px;
+          font-weight: 700;
+          letter-spacing: 5px; }
+    .home main .rooms {
+      width: 40%;
       height: 100%;
-      opacity: 1; }
+      padding: 10px 0;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      overflow: scroll;
+      -ms-overflow-style: none;
+      /* IE and Edge */
+      scrollbar-width: none; }
+      .home main .rooms::-webkit-scrollbar {
+        display: none; }
+      .home main .rooms .room {
+        position: relative;
+        width: 70%;
+        margin: 10px 0; }
+        .home main .rooms .room img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover; }
+        .home main .rooms .room .info {
+          position: absolute;
+          top: 0;
+          left: 0;
+          background-color: rgba(167, 187, 195, 0.8);
+          width: 100%;
+          height: 0;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          color: #fff;
+          opacity: 0;
+          transition: opacity .5s, height .3s; }
+          .home main .rooms .room .info .name {
+            font-weight: 500;
+            letter-spacing: 2px;
+            margin-bottom: 6px; }
+          .home main .rooms .room .info .price {
+            font-size: 14px; }
+      .home main .rooms .room:hover .info {
+        height: 100%;
+        opacity: 1; }
 
 header {
   padding: 12px 20px;
@@ -266,9 +265,11 @@ header {
       .dialog-reserve .content .btn-close:hover {
         background-color: rgba(74, 74, 74, 0.2); }
     .dialog-reserve .content .bill {
+      opacity: 0;
       font-size: 13px;
       text-align: right;
-      margin-bottom: 16px; }
+      margin-bottom: 16px;
+      color: #CF1F1F; }
     .dialog-reserve .content .title {
       font-size: 20px;
       font-weight: 500;
@@ -289,7 +290,8 @@ header {
         box-sizing: border-box;
         width: 100%;
         height: 100%;
-        outline: none; }
+        outline: none;
+        padding-left: 4px; }
       .dialog-reserve .content .item-input-date i {
         position: absolute;
         top: 5px;
@@ -302,7 +304,8 @@ header {
         box-sizing: border-box;
         width: 100%;
         height: 100%;
-        outline: none; }
+        outline: none;
+        padding-left: 4px; }
     .dialog-reserve .content .send-reservation {
       display: flex;
       justify-content: center;
@@ -319,3 +322,45 @@ header {
         border: 0;
         letter-spacing: 1px;
         cursor: pointer; }
+
+.dialog-success {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5); }
+  .dialog-success .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff;
+    color: #4a4a4a;
+    font-size: 14px; }
+    .dialog-success .content .cover-img {
+      width: 450px;
+      height: 280px;
+      object-fit: cover;
+      margin-bottom: 20px; }
+    .dialog-success .content .reserve-success {
+      padding: 20px 0; }
+      .dialog-success .content .reserve-success i {
+        font-size: 16px;
+        vertical-align: middle;
+        color: #3a634a; }
+    .dialog-success .content #btn-back {
+      margin: 20px 0;
+      width: 100px;
+      height: 30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #7B9FAA;
+      color: #fff;
+      outline: none;
+      border: 0;
+      letter-spacing: 1px;
+      cursor: pointer; }
